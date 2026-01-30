@@ -14,7 +14,22 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-card *ngIf="pedido">
+      <ion-card-header>
+        <ion-card-title>Pedido ##100053</ion-card-title>
+        <ion-card-subtitle>Dados</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Usuario:</strong>1003</p>
+        <p><strong>Cliente:</strong>{{pedido.id.Usuario_id}}</p>
+        <p><strong>Data:</strong>{{pedido.id.Usuario_id}}</p>
+        <p><strong>Status:</strong>{{pedido.id.Usuario_id}}</p>  
+        <p><strong>Desconto:</strong>{{pedido.id.Usuario_id}}</p>
+      </ion-card-content>
+    </ion-card>
+   <div>
+    <p (click)="Listar()">Listar Pedidos</p>
+   </div>
+    
   </div>
 </ion-content>
