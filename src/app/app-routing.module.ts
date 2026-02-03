@@ -17,12 +17,16 @@ const routes: Routes = [
   },
   {
     path: 'usuario-lisionic',
-    loadChildren: () => import('./pages/usuario/usuario-list/usuario-list.module').then( m => m.UsuarioLisionicPageModule)
+    loadChildren: () => import('./pages/usuario/usuario-list/usuario-list.module').then( m => m.UsuarioListPageModule)
   },
   {
     path: 'usuario-list',
     loadChildren: () => import('./pages/usuario/usuario-list/usuario-list.module').then( m => m.UsuarioListPageModule)
+  },  {
+    path: 'usuario-edit',
+    loadChildren: () => import('./pages/usuario/usuario-edit/usuario-edit.module').then( m => m.UsuarioEditPageModule)
   },
+
 
 ];
 
