@@ -2,20 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 import { IonicModule } from '@ionic/angular';
 
-import { UsuarioAddPageRoutingModule } from './usuario-add-routing.module';
+import { ClientePageRoutingModule } from './cliente-routing.module';
 
-import { UsuarioAddPage } from './usuario-add.page';
+import { ClientePage } from './cliente.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    UsuarioAddPageRoutingModule, 
-    ReactiveFormsModule
-  ],
-  declarations: [UsuarioAddPage]
+    ClientePageRoutingModule,
+    ClientePage
+  ]
 })
-export class UsuarioAddPageModule {}
+export class ClientePageModule {}

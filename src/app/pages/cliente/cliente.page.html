@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Novo Usuário</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form ... (ngSubmit)="salvar()">
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input formControlName="nome"></ion-input>
+    </ion-item>
+
+       <ion-item>
+      <ion-label position="floating">Cpf</ion-label>
+      <ion-input formControlName="cpf"></ion-input>
+    </ion-item>
+
+     <ion-item>
+      <ion-label position="floating">Telefone</ion-label>
+      <ion-input formControlName="telelfone"></ion-input>
+    </ion-item>
+
+     <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email"></ion-input>
+    </ion-item>
+
+     <ion-item>
+      <ion-label position="floating">Data de Nascimento</ion-label>
+      <ion-input formControlName="datanasc"></ion-input>
+    </ion-item>
+       <ion-button expand="block" type="submit" [disabled]="form.invalid">
+      Salvar
+    </ion-button>
+      
+</form>
+</ion-content>
