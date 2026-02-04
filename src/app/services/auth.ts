@@ -9,7 +9,11 @@ export class Auth {
   
   login(email:string, senha: string){
   //return this.api.operacao({}).subscribe(()=>{}), estrtura de chamada da api
-    return this.api.operacao({}).subscribe((res:any)=>{});
+    return this.api.operacao({
+      requisicao: 'login',
+      email,
+      senha
+    });
   }
 
   logout(){}
