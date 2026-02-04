@@ -38,6 +38,6 @@ export class UsuarioListPage implements OnInit {
   }
 
   editar(id:number){
-    this.router.navigate(['usuario-edit', id])
+    this.router.navigate(['/usuario-edit', id])
   }
 }
