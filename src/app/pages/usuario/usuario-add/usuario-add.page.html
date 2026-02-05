@@ -1,3 +1,4 @@
+
 <ion-header>
   <ion-toolbar>
     <ion-title>Novo Usuário</ion-title>
@@ -21,7 +22,9 @@
     <ion-item>
       <ion-label position="floating">Nível</ion-label>
       <ion-select formControlName="id_nivel">
-        <ion-select-option  *ngFor="let n of niveis" value="{{n.id}}">{{n.id + '-' + n.nome}}</ion-select-option>
+        <ion-select-option *ngFor="let n of niveis" value="{{n.id}}">
+          {{n.id + '-' + n.nome}}
+        </ion-select-option>
       </ion-select>
     </ion-item>
     <ion-button expand="block" type="submit" [disabled]="form.invalid">

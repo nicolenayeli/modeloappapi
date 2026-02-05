@@ -11,11 +11,9 @@ import { Vendas } from 'src/app/services/vendas';
 })
 export class UsuarioAddPage implements OnInit {
   form!: FormGroup;
-  niveis:any[] = [];
+  niveis:any[]=[];
 
-
-  constructor(
-    private formBuilder: FormBuilder,
+  constructor( private formBuilder: FormBuilder,
     private api: Vendas,
     private toast: ToastController
   ) { }
@@ -28,6 +26,7 @@ export class UsuarioAddPage implements OnInit {
       senha: ['', Validators.required],
       id_nivel: ['', Validators.required]
     });
+
     //Carregar níveis
     this.listarNiveis();
   }
@@ -53,13 +52,14 @@ export class UsuarioAddPage implements OnInit {
     });
     t.present();
   }
-    
+  
   listarNiveis(){
     this.api.operacao({
-    }).subscribe((res:any)=>{   //executar api
-        if(res.success){
-          this.niveis = res.data;
-        }
+      requisicao: 'nivel-listar'
+    }).subscribe((res:any)=>{
+      if(res.success){
+        this.niveis = res.data;
+      }
     });
   }
 

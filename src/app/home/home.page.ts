@@ -1,6 +1,9 @@
+import { Auth } from './../services/auth';
 import { Component } from '@angular/core';
 import { Vendas } from '../services/vendas';
 import { lastValueFrom } from 'rxjs';
+import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,12 +15,21 @@ export class HomePage {
   public pedido: any = null;
   mensagem = '';
 
-  constructor(private api: Vendas) {}
+  constructor(
+    private api: Vendas,
+    private toast: ToastController,
+    private auth: Auth,
+    private router: Router
+
+) {}
 
   ngOnInit(){
    
   }
-  logout(){}
+  logout(){
+    this.auth.logout();
+    this.router.navigateByUrl('/login'), {replaceUrl:true}
+  }
 
 
    //async Listar(){  //async quando acontece duas coisas ao mesmo tempo, duas "operações ao mesmo tempo"
