@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth-guard';
 
 const routes: Routes = [
   {
@@ -8,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -17,16 +18,23 @@ const routes: Routes = [
   },
   {
     path: 'usuario-lisionic',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./pages/usuario/usuario-list/usuario-list.module').then( m => m.UsuarioListPageModule)
   },
   {
     path: 'usuario-list',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./pages/usuario/usuario-list/usuario-list.module').then( m => m.UsuarioListPageModule)
   },
   {
     path: 'usuario-edit/:id',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./pages/usuario/usuario-edit/usuario-edit.module').then( m => m.UsuarioEditPageModule)
+  },  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
+
 
 
 ];

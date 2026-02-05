@@ -16,13 +16,18 @@ export class Auth {
     });
   }
 
-  logout(){}
+  logout(){
+    localStorage.removeItem('usuario');
+  }
 
-  setUsuario(){}
-
-  getUsuario(){}
+  setUsuario(dados:any){
+    localStorage.setItem('usuario', JSON.stringify(dados));
+  }
+  getUsuario(){ // recupera
+    return JSON.parse(localStorage.getItem('usuario') || 'null');
+  } 
 
   isLogado():boolean{
-    return true;
+    return !!this.getUsuario();
   }
 }
