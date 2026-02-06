@@ -5,11 +5,12 @@ import { AuthGuard } from './guards/auth-guard';
 const routes: Routes = [
   {
     path: 'home',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: '',
-    redirectTo: 'login',
+    path: '', // rota raiz,  rota principal
+    redirectTo: 'splash',
     pathMatch: 'full'
   },
   {
@@ -30,7 +31,8 @@ const routes: Routes = [
     path: 'usuario-edit/:id',
     canActivate: [AuthGuard],
     loadChildren: () => import('./pages/usuario/usuario-edit/usuario-edit.module').then( m => m.UsuarioEditPageModule)
-  },  {
+  },
+  {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
@@ -42,6 +44,15 @@ const routes: Routes = [
     path: 'cliente-add',
     loadChildren: () => import('./pages/cliente/cliente-add/cliente-add.module').then( m => m.ClienteAddPageModule)
   },
+  {
+    path: 'splash',
+    loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule)
+  },
+  {
+    path: 'cliente-editar',
+    loadChildren: () => import('./pages/clientes/cliente-editar/cliente-editar.module').then( m => m.ClienteEditarPageModule)
+  },
+
 
 
 

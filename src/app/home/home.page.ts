@@ -12,8 +12,7 @@ import { Router } from '@angular/router';
   standalone: false,
 })
 export class HomePage {
-  public pedido: any = null;
-  mensagem = '';
+
 
   constructor(
     private api: Vendas,
