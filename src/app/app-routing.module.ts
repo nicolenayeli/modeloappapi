@@ -52,6 +52,24 @@ const routes: Routes = [
     path: 'cliente-editar',
     loadChildren: () => import('./pages/clientes/cliente-editar/cliente-editar.module').then( m => m.ClienteEditarPageModule)
   },
+ 
+  {
+    path: 'produto-detalhe',
+    loadChildren: () => import('./pages/produto/produto-detalhe/produto-detalhe.module').then( m => m.ProdutoDetalhePageModule)
+  },
+ 
+    {
+    path: 'produto-detalhe/:id',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./pages/produto/produto-detalhe/produto-detalhe.module').then( m => m.ProdutoDetalhePageModule)
+  },
+
+    {
+    path: 'produto-list',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./pages/produto/produto-list/produto-list.module').then( m => m.ProdutoListPageModule)
+  },
+
 
 
 
