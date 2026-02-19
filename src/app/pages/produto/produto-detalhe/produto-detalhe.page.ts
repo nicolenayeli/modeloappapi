@@ -12,6 +12,9 @@ import { Vendas } from 'src/app/services/vendas';
   standalone:false
 })
 export class ProdutoDetalhePage implements OnInit {
+salvar() {
+throw new Error('Method not implemented.');
+}
 id!:number;
 form!:FormGroup;
 categorias:any[]=[];

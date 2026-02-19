@@ -68,7 +68,11 @@ const routes: Routes = [
     path: 'produto-list',
     canActivate: [AuthGuard],
     loadChildren: () => import('./pages/produto/produto-list/produto-list.module').then( m => m.ProdutoListPageModule)
+  },  {
+    path: 'produto-imagem',
+    loadChildren: () => import('./pages/produtos/produto-imagem/produto-imagem.module').then( m => m.ProdutoImagemPageModule)
   },
+
 
 
 

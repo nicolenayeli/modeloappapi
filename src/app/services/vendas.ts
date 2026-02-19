@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class Vendas {
-  private url = "http://10.91.47.129/modelo-api/api.php";
+  private url = "https://sublimegrace.com.br/modelo-api";
 
   constructor(private http: HttpClient){}
 
@@ -16,5 +16,13 @@ export class Vendas {
 
   // return this.http.post(this.url, dados);
   }
+
+
+  //upload de magem
+uploadImagem(idProduto: number, arquivo: File){
+  const formData = new FormData();
+  formData.append('requisicao', 'produto-upload-imagem');
+  formData.append('id_produto', id_produto)
+}  
 
 }

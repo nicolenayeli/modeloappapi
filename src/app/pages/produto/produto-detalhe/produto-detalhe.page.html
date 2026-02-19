@@ -8,43 +8,42 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <form [formGroup]="form" (ngSubmit)="salvar">
-    <ion-item>
-      <ion-label position="float">Descrição</ion-label>
-      <ion-input formControlName="descricao"></ion-input>
-    </ion-item>
+ <form [formGroup]="form" (ngSubmit)="salvar()">
+  <ion-item>
+    <ion-label position="floating">Descrição</ion-label>
+    <ion-input formControlName="descricao"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Código de Barras</ion-label>
+    <ion-input formControlName="cod_barras"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Valor Unitário</ion-label>
+    <ion-input formControlName="valor_unit"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Unidade de Venda</ion-label>
+    <ion-input formControlName="unidade_venda"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Quantidade em Estoque</ion-label>
+    <ion-input formControlName="quantidade"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Estoque Mínimo</ion-label>
+    <ion-input formControlName="estoque_minimo"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">última movimentação: </ion-label>
     
-   <ion-item>
-      <ion-label position="float">Código de Barras</ion-label>
-      <ion-input formControlName="cod_barras"></ion-input>
-    </ion-item>
+  </ion-item>
 
-    <ion-item>
-      <ion-label position="float">Valor Unitário</ion-label>
-      <ion-input formControlName="valor_unit"></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label position="float">  Unidade de Venda</ion-label>
-      <ion-input formControlName="unidade"></ion-input>
-    </ion-item>
-
-      <ion-item>
-      <ion-label position="float">Quantidade em Estoque</ion-label>
-      <ion-input formControlName="quantidade"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="float">Estoque Mínimo</ion-label>
-      <ion-input formControlName="estoque_minimo"></ion-input>
-    </ion-item>
-
-<ion-item>
-      <ion-label position="float">última movimentação</ion-label>
-      <ion-input formControlName=""></ion-input>
-    </ion-item>
-
-
-  </form>
+ </form>
 
 </ion-content>
