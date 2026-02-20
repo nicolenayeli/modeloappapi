@@ -22,7 +22,10 @@ export class Vendas {
 uploadImagem(idProduto: number, arquivo: File){
   const formData = new FormData();
   formData.append('requisicao', 'produto-upload-imagem');
-  formData.append('id_produto', id_produto)
+  formData.append('id_produto', idProduto.toString());
+  formData.append('imagem',arquivo)
+
+  return this.http.post(this.url + '/apiphp', formData);
 }  
 
 }
